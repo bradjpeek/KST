@@ -1,7 +1,7 @@
 # KST
 Keep Score Tennis
 
-KeepScore.Tennis is a planned (as of 05/2018) web-based application using Oracle's Application Express (APEX).
+KeepScore.Tennis (as of 05/2018) is a planned web-based application using Oracle's Application Express (APEX).
 
 Users will be able to use the site to record league and individual tennis matches.
 
