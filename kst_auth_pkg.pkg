@@ -23,7 +23,7 @@ as
   , p_password   in varchar2
   , p_first_name in varchar2
   , p_last_name  in varchar2
-  )
+  );
 
 
   /**
