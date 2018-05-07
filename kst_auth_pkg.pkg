@@ -17,10 +17,13 @@ as
   * @param p_username  username
   * @param p_password  password
   */
-  procedure create_account(
-      p_email    in varchar2,
-      p_password in varchar2
-  );
+  procedure create_account
+  (
+    p_email      in varchar2
+  , p_password   in varchar2
+  , p_first_name in varchar2
+  , p_last_name  in varchar2
+  )
 
 
   /**
@@ -61,52 +64,50 @@ as
   * Verify reeset password
   *
   * verify the token of the password request and retun the id of the user
-  *
-  * @param p_token 
   */
   function verify_reset_password(
-      p_id                in number,
-      p_verification_code in varchar2)
-    return number;
+    p_email             in varchar2,
+    p_verification_code in number)
+    return boolean;
 
 
   /**
   * Reset password
   *
-  * @param p_id       
+  * @param p_email      
   * @param p_password 
   */
   procedure reset_password(
-      p_id       in number,
-      p_password in varchar2) ;
+    p_email    in varchar2,
+    p_password in varchar2) ;
 
 
   /**
-  * Authorization: administrator
+  * Authorization: is_administrator
   *
-  * @param p_username  username
+  * @param p_email
   */
   function is_administrator(
-      p_username in varchar2)
+      p_email in varchar2)
     return boolean;
 
 
   /**
-  * Authorization: registered member
+  * Authorization: is_member
   *
-  * @param p_username  username
+  * @param p_email
   */
   function is_member(
-      p_username in varchar2)
+      p_email in varchar2)
     return boolean;
 
   /**
   * Authorization: guest
   *
-  * @param p_username  username
+  * @param p_email
   */
   function is_guest(
-      p_username in varchar2)
+      p_email in varchar2)
     return boolean;
 
 end kst_auth_pkg;
